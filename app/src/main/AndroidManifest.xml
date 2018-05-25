@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+    package="com.goudela.dimitra.provider"
+         >
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"> </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"> </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"> </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"> </uses-permission>
+
+
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.goudela.dimitra.sdy61_ge5_106304.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.goudela.dimitra.sdy61_ge5_106304.TextEditorActivity">
+        <!--<intent-filter>
+            <action android:name="android.intent.action." />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>-->
+
+        </activity>
+        
+<!--
+        <activity android:name="com."
+-->
+
+        <!--<activity
+            android:name="com.goudela.dimitra.test_program.FragmentTextEditor">
+
+        </activity>-->
+
+
+        <provider
+            android:name="com.goudela.dimitra.provider.MyProvider"
+            android:authorities="com.example.database.provider.MyProvider"
+            android:exported="true"
+            android:grantUriPermissions="true"
+            android:enabled="@bool/atLeastKitKat"
+            android:permission="android.permission.MANAGE_DOCUMENTS"
+
+
+            >
+            <intent-filter>
+                <action android:name="android.content.action.DOCUMENTS_PROVIDER"/>
+                <action android:name="android.intent.action.GET_CONTENT"/>
+                <action android:name="android.intent.action.CREATE_DOCUMENT"/>
+                <action android:name="android.intent.action.OPEN_DOCUMENT"/>
+
+            </intent-filter>
+        </provider>
+
+    </application>
+
+</manifest>
